@@ -1,0 +1,27 @@
+<a routerLink="/">Home</a>
+
+<form [formGroup]="myForm" [hidden]="success" (ngSubmit)="submitHandler()">
+
+    Value: {{ myForm.value | json }}
+  
+    <hr>
+  
+    <mat-form-field>
+      <input matInput type="email" placeholder="email" formControlName="email" >
+    </mat-form-field>
+  
+    <br/>
+  
+    <mat-form-field>
+      <textarea matInput placeholder="Write something cool!" formControlName="message" ></textarea>
+    </mat-form-field>
+  
+    <br/>
+
+    <button mat-raised-button color="primary" [disabled]="myForm.invalid">Submit</button>
+  
+</form>
+
+<div *ngIf="success" class="notification is-success">
+  Demo Form Submitted Succesfully
+</div>

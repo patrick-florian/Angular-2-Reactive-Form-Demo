@@ -1,0 +1,36 @@
+<a routerLink="/">Home</a>
+
+<form [formGroup]="myForm" >
+
+  Value: {{ myForm.value | json }}
+
+  <hr>
+
+  <mat-form-field>
+    <input matInput type="email" placeholder="email" formControlName="email" >
+  </mat-form-field>
+
+  <br/>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Write something cool!" formControlName="message" ></textarea>
+  </mat-form-field>
+
+  <br/>
+
+  <mat-form-field>
+    <mat-select placeholder="career" formControlName="career" >
+        <mat-option [value]="1">
+          Item 1
+        </mat-option>
+        <mat-option [value]="2">
+            Item 2
+        </mat-option>
+        <mat-option [value]="3">
+            Item 3
+        </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+</form>

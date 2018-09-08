@@ -1,0 +1,72 @@
+<a routerLink="/">Home</a>
+
+<form [formGroup]="myForm" >
+
+    Value: {{ myForm.value | json }}
+  
+    <hr>
+  
+    <mat-form-field>
+      <input matInput type="email" placeholder="email" formControlName="email" >
+    </mat-form-field>
+  
+    <br/>
+  
+    <h4>Cell Phone</h4>
+
+    <div formGroupName="cellPhone">
+
+        <mat-form-field>
+            <label>
+                Area Code:
+            <input matInput formControlName="area" >
+            </label>
+        </mat-form-field>
+
+        <mat-form-field>
+            <label>
+                Prefix:
+            <input matInput formControlName="prefix" >
+            </label>
+        </mat-form-field>
+
+        <mat-form-field>
+            <label>
+                Line:
+            <input matInput formControlName="line" >
+            </label>
+        </mat-form-field>
+
+    </div>
+
+    <br/>
+  
+    <h4>Home Phone</h4>
+
+    <div formGroupName="homePhone">
+
+        <mat-form-field>
+            <label>
+              Area Code:
+            <input matInput formControlName="area" >
+            </label>
+        </mat-form-field>
+
+        <mat-form-field>
+            <label>
+                Prefix:
+            <input matInput formControlName="prefix" >
+            </label>
+        </mat-form-field>
+
+        <mat-form-field>
+            <label>
+                Line:
+            <input matInput formControlName="line" >
+            </label>
+        </mat-form-field>
+
+    </div>
+  
+  
+  </form>

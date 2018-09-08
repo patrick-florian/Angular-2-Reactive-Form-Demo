@@ -1,0 +1,56 @@
+<a routerLink="/">Home</a>
+
+<form [formGroup]="myForm">
+
+    Value: {{ myForm.value | json }}
+    
+    <hr>
+    
+    <mat-form-field>
+      <input matInput type="email" placeholder="email" formControlName="email" >
+
+      <mat-error *ngIf="email.touched && email.invalid">
+        Your email isn't in the correct format, for example test@gmail.com
+      </mat-error>
+    </mat-form-field>
+
+    <br/>
+    <br/>
+
+    <mat-form-field>
+        <input matInput type="password" placeholder="password" formControlName="password" >
+
+        <mat-hint align="end">Password must be at least one letter and one number</mat-hint>
+
+        <mat-error *ngIf="password.invalid && password.touched">
+          The password does not meet the criteria
+        </mat-error>
+
+    </mat-form-field>
+
+    <br/>
+    <br/>
+
+    <mat-form-field>
+        <input matInput type="number" placeholder="age" [value]="0" formControlName="age" >
+
+        <mat-error *ngIf="age.errors?.min && age.touched">
+          {{ age.errors.min.actual }} is too young to use this app.
+        </mat-error>
+
+        <mat-error *ngIf="age.errors?.max && age.touched">
+            {{ age.errors.max.actual }} is too old to use this app.
+          </mat-error>
+
+    </mat-form-field>
+
+    <br/>
+    <br/>
+
+    <mat-checkbox formControlName="agree" color="primary">Are you sure?</mat-checkbox>
+
+    <hr>
+
+    <button mat-raised-button [disabled]="myForm.invalid" color="primary">Submit</button>
+    
+    </form>
